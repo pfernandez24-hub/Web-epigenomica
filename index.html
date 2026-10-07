@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Codificación de caracteres: permite usar tildes y eñes -->
+  <meta charset="UTF-8">
+  <!-- Hace que la web se adapte al ancho del móvil -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Web divulgativa sobre epigenómica y su papel en las enfermedades complejas.">
+  <title>Epigenómica y enfermedades complejas</title>
+
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Nuestra hoja de estilos -->
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <!-- ===== CABECERA Y MENÚ DE NAVEGACIÓN ===== -->
+  <header class="cabecera">
+    <nav class="menu">
+      <a href="#inicio" class="logo">Epi<span>genómica</span></a>
+      <ul>
+        <li><a href="#modificaciones">Modificaciones</a></li>
+        <li><a href="#metilacion">Metilación</a></li>
+        <li><a href="#plasticidad">Plasticidad</a></li>
+        <li><a href="#edicion">Edición epigenética</a></li>
+        <li><a href="#referencias">Referencias</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== PORTADA ===== -->
+    <section id="inicio" class="portada">
+      <p class="etiqueta">Fundamentos de Genómica, Proteómica y Metabolómica</p>
+      <h1>Epigenómica y su papel en las enfermedades complejas</h1>
+      <p class="entradilla">
+        El mismo genoma da lugar a una neurona, un hepatocito o una célula tumoral.
+        La diferencia no está en la secuencia del ADN, sino en cómo se lee.
+      </p>
+      <a href="#introduccion" class="boton">Empezar</a>
+    </section>
+
+    <!-- ===== INTRODUCCIÓN ===== -->
+    <section id="introduccion" class="seccion">
+      <h2>¿Qué es la epigenómica?</h2>
+      <p>
+        La <strong>epigenética</strong> estudia los cambios en la expresión génica que se
+        transmiten a las células hijas sin alterar la secuencia de nucleótidos. El término lo
+        acuñó Conrad Waddington en 1942 para describir cómo el genotipo da lugar al fenotipo
+        durante el desarrollo. La <strong>epigenómica</strong> lleva esta pregunta a escala
+        genómica: estudia el conjunto de marcas epigenéticas de una célula (su
+        <em>epigenoma</em>) con técnicas de alto rendimiento.
+      </p>
+      <p>
+        Todas las células de un organismo comparten prácticamente el mismo genoma, pero cada
+        tipo celular tiene un epigenoma distinto. Consorcios como el <em>NIH Roadmap
+        Epigenomics</em>, ENCODE o el IHEC han cartografiado los epigenomas de referencia de
+        decenas de tejidos y tipos celulares humanos.
+      </p>
+
+      <h3>¿Por qué importa en las enfermedades complejas?</h3>
+      <p>
+        Las <strong>enfermedades complejas</strong> (diabetes tipo 2, enfermedad cardiovascular,
+        asma, esquizofrenia, la mayoría de cánceres…) no se deben a la mutación de un único gen.
+        Surgen de la combinación de muchas variantes genéticas de efecto pequeño con factores
+        ambientales. Hay dos observaciones que apuntan a la epigenética:
+      </p>
+      <ul>
+        <li>
+          La gran mayoría de las variantes asociadas a enfermedad en los estudios GWAS están en
+          <strong>regiones no codificantes</strong>, sobre todo en potenciadores
+          (<em>enhancers</em>) y promotores. Es decir, en regiones que regulan cuándo y dónde se
+          expresa un gen, cuya actividad depende del estado de la cromatina.
+        </li>
+        <li>
+          El epigenoma responde al <strong>ambiente</strong> (dieta, tabaco, estrés, contaminantes,
+          envejecimiento). Así, funciona como una interfaz entre lo que heredamos y lo que vivimos.
+        </li>
+      </ul>
+
+      <aside class="caja">
+        <p class="caja-titulo">Caso clásico: el Invierno del Hambre holandés</p>
+        <p>
+          Entre 1944 y 1945, el oeste de Países Bajos sufrió una hambruna severa. Las personas
+          expuestas a ella en el útero mostraban, unos 60 años después, menor metilación del gen
+          <em>IGF2</em> que sus hermanos no expuestos. También tenían mayor riesgo de obesidad
+          y enfermedad metabólica (Heijmans et al., 2008). Es un ejemplo de cómo un entorno temprano
+          puede dejar una huella epigenética duradera.
+        </p>
+      </aside>
+    </section>
+
+    <!-- ===== PREGUNTA 1 ===== -->
+    <section id="modificaciones" class="seccion">
+      <span class="numero">01</span>
+      <h2>¿Qué tipos de modificaciones epigenéticas existen y cómo afectan a la expresión génica?</h2>
+      <p>
+        El ADN de cada célula humana mide unos dos metros y cabe en un núcleo de pocas micras
+        porque se enrolla alrededor de octámeros de histonas, formando <strong>nucleosomas</strong>,
+        que se compactan en <strong>cromatina</strong>. Su grado de compactación decide si la
+        maquinaria transcripcional puede acceder a un gen. Las marcas epigenéticas regulan esa
+        accesibilidad mediante tres tipos de proteínas: <em>escritores</em> (las añaden),
+        <em>borradores</em> (las eliminan) y <em>lectores</em> (las reconocen y reclutan otros
+        complejos).
+      </p>
+
+      <h3>1. Metilación del ADN</h3>
+      <p>
+        Consiste en añadir un grupo metilo al carbono 5 de la citosina (<strong>5mC</strong>),
+        casi siempre en dinucleótidos <strong>CpG</strong>. En el genoma humano están metilados en torno
+        al 70–80 % de los CpG. Las excepciones son las <strong>islas CpG</strong>, regiones ricas en CpG
+        presentes en aproximadamente el 60–70 % de los promotores, que suelen estar sin metilar
+        cuando el gen está activo.
+      </p>
+      <ul>
+        <li><strong>Escritores:</strong> DNMT3A y DNMT3B establecen la metilación <em>de novo</em>.
+          DNMT1, junto con UHRF1, la copia en la hebra nueva tras cada replicación (metilación
+          de mantenimiento). Esa copia es la base de la memoria epigenética.</li>
+        <li><strong>Borradores:</strong> las enzimas TET (TET1–3) oxidan la 5mC a
+          5-hidroximetilcitosina (5hmC) y otros derivados. Estos se eliminan después por reparación
+          por escisión de bases. La metilación también se pierde de forma pasiva si DNMT1 no actúa
+          durante la replicación.</li>
+        <li><strong>Efecto:</strong> la metilación del <em>promotor</em> silencia el gen.
+          Impide la unión de factores de transcripción y recluta proteínas con dominio MBD
+          (como MeCP2), que a su vez atraen desacetilasas de histonas. En cambio, la metilación
+          en el <em>cuerpo del gen</em> se asocia a transcripción activa.</li>
+      </ul>
+
+      <h3>2. Modificaciones postraduccionales de histonas</h3>
+      <p>
+        Las colas N-terminales de las histonas pueden acetilarse, metilarse, fosforilarse o
+        ubiquitinarse, entre otras modificaciones. La combinación de estas marcas (el llamado
+        <em>código de histonas</em>) determina el estado funcional de cada región del genoma:
+      </p>
+
+      <!-- Tabla: las marcas de histonas más estudiadas -->
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>Marca</th>
+              <th>Dónde aparece</th>
+              <th>Efecto sobre la expresión</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>H3K4me3</td>
+              <td>Promotores</td>
+              <td class="activa">Activación</td>
+            </tr>
+            <tr>
+              <td>H3K27ac</td>
+              <td>Promotores y potenciadores activos</td>
+              <td class="activa">Activación</td>
+            </tr>
+            <tr>
+              <td>H3K4me1</td>
+              <td>Potenciadores (activos o preparados)</td>
+              <td class="activa">Preparación / activación</td>
+            </tr>
+            <tr>
+              <td>H3K36me3</td>
+              <td>Cuerpo de genes transcritos</td>
+              <td class="activa">Elongación de la transcripción</td>
+            </tr>
+            <tr>
+              <td>H3K27me3</td>
+              <td>Genes del desarrollo (complejo Polycomb PRC2, enzima EZH2)</td>
+              <td class="represiva">Represión facultativa</td>
+            </tr>
+            <tr>
+              <td>H3K9me3</td>
+              <td>Heterocromatina, secuencias repetitivas</td>
+              <td class="represiva">Represión constitutiva</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        La <strong>acetilación</strong>, catalizada por acetiltransferasas (HAT) y revertida por
+        desacetilasas (HDAC), neutraliza la carga positiva de las lisinas. Eso debilita su unión
+        al ADN, que tiene carga negativa, y abre la cromatina. La <strong>metilación</strong> de
+        histonas no cambia la carga. Su efecto depende del residuo modificado y del número de
+        grupos metilo, que determinan qué proteínas lectoras se unen.
+      </p>
+
+      <h3>3. Remodelado de la cromatina</h3>
+      <p>
+        Los complejos remodeladores dependientes de ATP (SWI/SNF, ISWI, CHD e INO80) deslizan,
+        expulsan o reemplazan nucleosomas. También incorporan <strong>variantes de histonas</strong>
+        como H2A.Z o H3.3. Las subunidades de SWI/SNF están mutadas en aproximadamente el 20 % de los
+        cánceres humanos; por ejemplo, <em>ARID1A</em> en el carcinoma de ovario de células claras.
+      </p>
+
+      <h3>4. ARN no codificantes</h3>
+      <p>
+        Los <strong>ARN largos no codificantes</strong> (lncRNA) pueden guiar complejos
+        modificadores de la cromatina a regiones concretas. El ejemplo clásico es
+        <em>XIST</em>, que recubre uno de los cromosomas X en las células femeninas y recluta
+        complejos represores (entre ellos, Polycomb) para silenciarlo. Los <strong>microARN</strong>
+        (miRNA) actúan sobre todo después de la transcripción y suelen considerarse reguladores
+        epigenéticos en sentido amplio.
+      </p>
+
+      <h3>Del mecanismo a la enfermedad</h3>
+      <ul>
+        <li><strong>Cáncer:</strong> el patrón típico combina <em>hipometilación global</em>, que
+          causa inestabilidad genómica, con <em>hipermetilación de islas CpG</em> en promotores de
+          genes supresores de tumores. Ejemplos: <em>MLH1</em> en el cáncer colorrectal esporádico
+          con inestabilidad de microsatélites, <em>CDKN2A</em> (p16) o <em>BRCA1</em>.</li>
+        <li><strong>Neoplasias hematológicas:</strong> las mutaciones en <em>DNMT3A</em> y
+          <em>TET2</em> aparecen en la hematopoyesis clonal y en la leucemia mieloide aguda. Las
+          mutaciones de <em>IDH1/2</em> producen 2-hidroxiglutarato, un metabolito que inhibe las
+          enzimas TET y las desmetilasas de histonas. Es un vínculo directo entre metabolómica y
+          epigenómica.</li>
+        <li><strong>Trastornos del neurodesarrollo:</strong> el síndrome de Rett se debe a
+          mutaciones en <em>MECP2</em>, una proteína lectora de la metilación.</li>
+        <li><strong>Impronta genómica:</strong> los síndromes de Prader-Willi y Angelman
+          afectan a la misma región del cromosoma 15. Uno u otro aparece según se pierda el alelo
+          paterno o el materno, que tienen patrones de metilación distintos.</li>
+      </ul>
+    </section>
+
+    <!-- ===== PREGUNTA 2 ===== -->
+    <section id="metilacion" class="seccion">
+      <span class="numero">02</span>
+      <h2>¿Cómo se estudia la metilación del ADN en tejidos específicos?</h2>
+      <p>
+        El metiloma es <strong>específico de cada tipo celular</strong>. Por eso hay que resolver
+        dos problemas: medir qué citosinas están metiladas y saber <em>de qué células</em>
+        procede la señal. Un trozo de tejido es una mezcla de tipos celulares, y un cambio aparente
+        en la metilación puede reflejar solo un cambio en sus proporciones.
+      </p>
+
+      <h3>El punto de partida: la conversión con bisulfito</h3>
+      <p>
+        El bisulfito sódico desamina las citosinas <strong>no metiladas</strong> a uracilo, que se
+        lee como timina tras la PCR. Las 5mC quedan protegidas y siguen leyéndose como C.
+        Comparando la secuencia tratada con la de referencia se conoce el estado de cada CpG.
+        Esta técnica tiene dos limitaciones: degrada buena parte del ADN y no distingue 5mC de
+        5hmC (para eso existen variantes como oxBS-seq o TAB-seq). La conversión enzimática
+        (EM-seq) es una alternativa que daña menos el ADN.
+      </p>
+
+      <!-- Tabla comparativa de técnicas -->
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>Técnica</th>
+              <th>Cobertura</th>
+              <th>Ventajas</th>
+              <th>Limitaciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>WGBS</strong><br>(bisulfito de genoma completo)</td>
+              <td>~28 millones de CpG, resolución de base</td>
+              <td>Patrón de referencia, sin sesgo de selección</td>
+              <td>Coste alto, mucha profundidad de secuenciación</td>
+            </tr>
+            <tr>
+              <td><strong>RRBS</strong><br>(representación reducida)</td>
+              <td>Regiones ricas en CpG (digestión con MspI)</td>
+              <td>Más barato, útil con poco ADN</td>
+              <td>Pierde regiones con pocos CpG, como muchos potenciadores</td>
+            </tr>
+            <tr>
+              <td><strong>Arrays Illumina</strong><br>(450K, EPIC)</td>
+              <td>~450.000 – 935.000 CpG predefinidos</td>
+              <td>Barato, reproducible, estándar en estudios poblacionales</td>
+              <td>Solo los CpG incluidos en el diseño</td>
+            </tr>
+            <tr>
+              <td><strong>MeDIP / MBD-seq</strong></td>
+              <td>Regiones metiladas enriquecidas por anticuerpo o proteína</td>
+              <td>No requiere bisulfito</td>
+              <td>Baja resolución, resultado semicuantitativo</td>
+            </tr>
+            <tr>
+              <td><strong>Nanopore / PacBio</strong><br>(tercera generación)</td>
+              <td>Genoma completo, lecturas largas</td>
+              <td>Detecta 5mC directamente, distingue alelos (haplotipos)</td>
+              <td>Mayor tasa de error y coste por muestra</td>
+            </tr>
+            <tr>
+              <td><strong>Pirosecuenciación / MSP</strong></td>
+              <td>Uno o pocos loci</td>
+              <td>Rápido, barato, aplicable en clínica</td>
+              <td>No es una técnica ómica</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Estrategias para conseguir especificidad de tejido y de célula</h3>
+      <ul>
+        <li><strong>Separar antes de medir:</strong> se aíslan poblaciones concretas por
+          citometría (FACS), con bolas magnéticas (MACS) o por microdisección láser antes de
+          extraer el ADN. En tejidos congelados, como el cerebro, se separan núcleos (por ejemplo,
+          neuronales frente a gliales).</li>
+        <li><strong>Célula única:</strong> métodos como scBS-seq o scRRBS miden la metilación célula a célula.
+          Los protocolos multiómicos (como scNMT-seq) combinan en la misma célula la metilación,
+          la accesibilidad de la cromatina y el transcriptoma.</li>
+        <li><strong>Deconvolución computacional:</strong> se usan perfiles de referencia de cada tipo celular
+          para estimar las proporciones de cada población en una muestra mixta (el método de
+          Houseman para sangre es el más usado). Estas proporciones se incluyen como covariables
+          para no confundir composición celular con cambio epigenético.</li>
+      </ul>
+
+      <h3>Aplicaciones en enfermedades complejas</h3>
+      <ul>
+        <li><strong>Estudios EWAS</strong> (<em>epigenome-wide association studies</em>):
+          comparan la metilación entre casos y controles. Su principal reto es la
+          <em>causalidad inversa</em>: un cambio puede ser consecuencia de la enfermedad y no su
+          causa. También la elección del tejido, ya que la sangre es accesible pero no siempre
+          representa el órgano afectado. Para abordar la causalidad se usa la aleatorización
+          mendeliana.</li>
+        <li><strong>Biopsia líquida:</strong> el ADN libre circulante en plasma (cfDNA)
+          conserva el patrón de metilación de su tejido de origen. Esto permite detectar ADN
+          tumoral e inferir de qué órgano procede. Ya hay pruebas clínicas basadas en este
+          principio, como la de <em>SEPT9</em> metilado en plasma para cáncer colorrectal.</li>
+        <li><strong>Biomarcadores predictivos:</strong> la metilación del promotor de
+          <em>MGMT</em> en el glioblastoma predice una mejor respuesta a la temozolomida
+          (Hegi et al., 2005).</li>
+        <li><strong>Relojes epigenéticos:</strong> combinaciones de unos cientos de CpG estiman
+          la edad biológica (Horvath, 2013). Su aceleración se asocia a mayor riesgo de
+          enfermedad cardiovascular, cáncer y mortalidad.</li>
+      </ul>
+    </section>
+
+    <!-- ===== PREGUNTA 3 ===== -->
+    <section id="plasticidad" class="seccion">
+      <span class="numero">03</span>
+      <h2>¿Qué relación existe entre epigenética y plasticidad celular?</h2>
+      <p>
+        La <strong>plasticidad celular</strong> es la capacidad de una célula para cambiar de
+        identidad o de estado funcional. La epigenética juega a la vez dos papeles opuestos: la
+        hace posible y también la limita.
+      </p>
+
+      <h3>El paisaje epigenético de Waddington</h3>
+      <p>
+        Waddington representó el desarrollo como una canica que rueda por una ladera con valles
+        cada vez más profundos. Arriba está la célula pluripotente; cada valle es un destino
+        celular. Las marcas epigenéticas actúan como las paredes de esos valles: a medida que una
+        célula se diferencia, se acumulan marcas represivas en los genes de otros linajes, y
+        volver atrás es cada vez más difícil.
+      </p>
+
+      <h3>Mecanismos que permiten la plasticidad</h3>
+      <ul>
+        <li><strong>Dominios bivalentes:</strong> en las células madre embrionarias, muchos
+          promotores de genes del desarrollo tienen a la vez una marca activadora (H3K4me3) y
+          una represora (H3K27me3). Quedan "en pausa", listos para activarse o silenciarse según
+          la señal de diferenciación.</li>
+        <li><strong>Memoria epigenética:</strong> una vez decidida la identidad, la metilación
+          y las marcas Polycomb se copian en cada división. Así, un fibroblasto sigue siendo
+          fibroblasto aunque cambie su entorno.</li>
+      </ul>
+
+      <h3>Reprogramación: borrar la memoria</h3>
+      <p>
+        En 2006, Takahashi y Yamanaka demostraron que bastan cuatro factores de transcripción
+        (Oct4, Sox2, Klf4 y c-Myc, los factores OSKM) para convertir fibroblastos en
+        <strong>células madre pluripotentes inducidas</strong> (iPSC). El proceso es ineficiente
+        (normalmente menos del 1 % de las células), sobre todo porque la barrera epigenética es
+        difícil de superar. Además, las iPSC pueden conservar una <em>memoria epigenética</em>
+        residual de su tejido de origen. Gurdon y Yamanaka recibieron el Nobel de Medicina en 2012.
+      </p>
+      <p>
+        La <strong>reprogramación parcial</strong>, con expresión transitoria y cíclica de OSKM,
+        rejuvenece marcas epigenéticas sin borrar la identidad celular. En ratones prolonga
+        la vida de modelos de envejecimiento acelerado (Ocampo et al., 2016), lo que abre una
+        línea de investigación sobre el envejecimiento como proceso en parte epigenético.
+      </p>
+
+      <h3>La plasticidad en la enfermedad</h3>
+      <ul>
+        <li><strong>Cáncer:</strong> la reprogramación epigenética no mutacional y la
+          plasticidad fenotípica se reconocen hoy como rasgos distintivos del cáncer
+          (Hanahan, 2022). Las células tumorales pueden pasar por la transición
+          epitelio-mesénquima, adquirir rasgos de célula madre o entrar en un
+          <em>estado persistente tolerante a fármacos</em>. Este estado es reversible y
+          depende de modificadores de la cromatina, no de mutaciones (Sharma et al., 2010).</li>
+        <li><strong>Diabetes:</strong> la <em>memoria metabólica</em> explica que las
+          complicaciones vasculares progresen aunque la glucemia se controle más tarde. Una
+          exposición transitoria a hiperglucemia deja cambios de cromatina persistentes en
+          genes inflamatorios del endotelio (El-Osta et al., 2008).</li>
+        <li><strong>Inmunidad entrenada:</strong> tras estímulos como la vacuna BCG, los
+          monocitos adquieren marcas activadoras en genes inflamatorios. Es una "memoria"
+          de la inmunidad innata, beneficiosa frente a infecciones pero implicada en
+          enfermedades inflamatorias crónicas.</li>
+      </ul>
+    </section>
+
+    <!-- ===== PREGUNTA 4 ===== -->
+    <section id="edicion" class="seccion">
+      <span class="numero">04</span>
+      <h2>¿Qué tecnologías permiten revertir modificaciones epigenéticas de forma dirigida?</h2>
+      <p>
+        A diferencia de las mutaciones, las marcas epigenéticas son <strong>reversibles</strong>.
+        Por eso son una diana terapéutica atractiva. El reto es pasar de fármacos que actúan sobre
+        todo el genoma a herramientas que modifiquen un único locus.
+      </p>
+
+      <h3>Primera generación: fármacos epigenéticos (efecto global)</h3>
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>Diana</th>
+              <th>Fármacos</th>
+              <th>Indicación principal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>DNMT (inhibidores hipometilantes)</td>
+              <td>Azacitidina, decitabina</td>
+              <td>Síndromes mielodisplásicos, leucemia mieloide aguda</td>
+            </tr>
+            <tr>
+              <td>HDAC</td>
+              <td>Vorinostat, romidepsina, panobinostat</td>
+              <td>Linfomas T cutáneos y periféricos, mieloma múltiple</td>
+            </tr>
+            <tr>
+              <td>EZH2</td>
+              <td>Tazemetostat</td>
+              <td>Sarcoma epitelioide, linfoma folicular</td>
+            </tr>
+            <tr>
+              <td>IDH1 / IDH2 mutantes</td>
+              <td>Ivosidenib, enasidenib</td>
+              <td>LMA con mutación de IDH (restauran indirectamente TET)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Estos fármacos funcionan, pero <strong>no distinguen locus</strong>. Reactivan supresores
+        tumorales, pero también pueden activar otros genes y elementos repetitivos, con toxicidad
+        importante. Su uso se concentra en cánceres hematológicos.
+      </p>
+
+      <h3>Segunda generación: edición epigenética dirigida</h3>
+      <p>
+        La idea es unir dos módulos: un <strong>dominio de unión al ADN programable</strong>, que
+        lleva la herramienta al locus elegido, y un <strong>dominio efector</strong>, que escribe
+        o borra una marca epigenética concreta. Se han usado dedos de zinc y TALE. Hoy domina
+        <strong>dCas9</strong>, una Cas9 sin actividad nucleasa ("muerta") que se guía por un
+        ARN guía pero no corta el ADN.
+      </p>
+
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>Herramienta</th>
+              <th>Efector</th>
+              <th>Resultado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>dCas9-TET1</td>
+              <td>Dominio catalítico de TET1</td>
+              <td class="activa">Desmetila el ADN y reactiva genes silenciados</td>
+            </tr>
+            <tr>
+              <td>dCas9-p300</td>
+              <td>Acetiltransferasa p300</td>
+              <td class="activa">Añade H3K27ac en promotores o potenciadores</td>
+            </tr>
+            <tr>
+              <td>dCas9-KRAB (CRISPRi)</td>
+              <td>Dominio KRAB → H3K9me3</td>
+              <td class="represiva">Represión (en general, transitoria)</td>
+            </tr>
+            <tr>
+              <td>dCas9-DNMT3A(-3L)</td>
+              <td>Metiltransferasa de novo</td>
+              <td class="represiva">Metila el ADN y silencia el gen</td>
+            </tr>
+            <tr>
+              <td>CRISPRoff / CRISPRon</td>
+              <td>DNMT3A + DNMT3L + KRAB / TET1</td>
+              <td>Silenciamiento heredable durante cientos de divisiones, y su reversión</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="caja">
+        <p class="caja-titulo">Prueba de concepto: síndrome X frágil</p>
+        <p>
+          En el síndrome X frágil, la expansión de repeticiones CGG provoca la hipermetilación
+          del promotor de <em>FMR1</em> y lo silencia. Con dCas9-TET1 dirigido a esa región,
+          Liu et al. (2018) desmetilaron el promotor en neuronas derivadas de pacientes y
+          recuperaron la expresión del gen sin corregir la mutación.
+        </p>
+      </aside>
+
+      <h3>Ventajas y retos</h3>
+      <ul>
+        <li><strong>Ventajas:</strong> no se generan roturas de doble cadena ni se altera la
+          secuencia, el efecto es en principio reversible y se pueden modificar varios loci a
+          la vez.</li>
+        <li><strong>Entrega:</strong> dCas9 con su efector supera la capacidad de los vectores
+          AAV (~4,7 kb). Se exploran sistemas divididos, Cas más pequeñas y nanopartículas
+          lipídicas con ARNm. Con una sola dosis de nanopartículas lipídicas se ha silenciado
+          el gen hepático <em>Pcsk9</em> en ratón durante casi un año, sin cortar el ADN
+          (Cappelluti et al., 2024).</li>
+        <li><strong>Especificidad:</strong> puede haber unión fuera de diana y cambios
+          epigenéticos colaterales en el genoma.</li>
+        <li><strong>Estabilidad:</strong> que la marca se mantenga depende del contexto
+          cromatínico del locus. Algunas modificaciones se pierden tras unas divisiones.</li>
+        <li><strong>Causalidad:</strong> en muchas enfermedades complejas aún no sabemos qué
+          marca es causa y cuál es consecuencia. La edición epigenética es, además de una posible
+          terapia, la herramienta experimental para responder a esa pregunta.</li>
+      </ul>
+    </section>
+
+    <!-- ===== IDEAS CLAVE ===== -->
+    <section id="conclusion" class="seccion">
+      <h2>Ideas clave</h2>
+      <ol class="ideas">
+        <li>El epigenoma (metilación del ADN, marcas de histonas, remodelado de la cromatina y
+          ARN no codificantes) determina qué partes del genoma se leen en cada célula.</li>
+        <li>El metiloma es específico de tipo celular. Estudiarlo exige elegir bien la
+          técnica y controlar la composición celular de la muestra.</li>
+        <li>La epigenética da a la vez estabilidad y plasticidad a la identidad celular, y esa
+          plasticidad tiene un papel central en el cáncer, la diabetes o el envejecimiento.</li>
+        <li>Las marcas epigenéticas son reversibles. La edición epigenética dirigida promete
+          corregirlas locus a locus sin alterar la secuencia del ADN.</li>
+      </ol>
+    </section>
+
+    <!-- ===== REFERENCIAS ===== -->
+    <section id="referencias" class="seccion">
+      <h2>Referencias</h2>
+      <ol class="referencias">
+        <li>[Se añadirán y verificarán en el paso 4.]</li>
+      </ol>
+    </section>
+
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="pie">
+    <p>Trabajo para la asignatura Fundamentos de Genómica, Proteómica y Metabolómica · UCAM · 2026</p>
+  </footer>
+
+</body>
+</html>
