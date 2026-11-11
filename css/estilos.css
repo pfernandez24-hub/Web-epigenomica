@@ -175,9 +175,46 @@ a { color: var(--acento); }
 
 .seccion li { margin-bottom: 0.6rem; }
 
+/* =========================================================
+   CITAS Y BIBLIOGRAFÍA
+   ========================================================= */
+/* Número de referencia en el texto: [3] */
+.cita {
+  font-size: 0.78em;
+  vertical-align: super;
+  line-height: 0;
+  text-decoration: none;
+  padding: 0 0.1em;
+}
+.cita:hover { text-decoration: underline; }
+
+/* Cita escrita en el propio texto: (Autor et al., 2008) */
+.cita-texto {
+  color: inherit;
+  text-decoration-color: var(--acento);
+  text-underline-offset: 2px;
+}
+.cita-texto:hover { color: var(--acento); }
+
 .referencias {
-  font-size: 0.95rem;
+  font-size: 0.93rem;
   color: var(--texto-suave);
+  line-height: 1.6;
+  padding-left: 1.4rem;
+}
+.referencias li {
+  margin-bottom: 1rem;
+  scroll-margin-top: 5rem;   /* el menú fijo no tapa la referencia al saltar */
+}
+.referencias li::marker { color: var(--acento); }
+.referencias a { word-break: break-word; }
+
+/* Resalta un instante la referencia a la que acabas de saltar */
+.referencias li:target {
+  background: var(--acento-claro);
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+  margin-left: -0.6rem;
 }
 
 /* Lista numerada de ideas clave */
