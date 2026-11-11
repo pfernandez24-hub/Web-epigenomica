@@ -14,7 +14,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- Nuestra hoja de estilos -->
-  <link rel="stylesheet" href="css/estilos.css">
+  <!-- El ?v=2 obliga al navegador a descargar la hoja de estilos de nuevo
+       en vez de usar la copia guardada. Súbelo a v=3, v=4... si cambias el CSS. -->
+  <link rel="stylesheet" href="css/estilos.css?v=3">
 </head>
 <body>
 
@@ -109,7 +111,91 @@
         complejos).
       </p>
 
-      <h3>1. Metilación del ADN</h3>
+      <!-- DIAGRAMA 1: promotor metilado frente a no metilado -->
+      <figure>
+        <svg viewBox="0 0 720 290" role="img"
+             aria-label="Comparación de un promotor con la isla CpG sin metilar, en el que el gen se transcribe, y el mismo promotor con los CpG metilados, que recluta MeCP2 y HDAC e impide la transcripción.">
+          <defs>
+            <marker id="f-activa" viewBox="0 0 10 10" refX="9" refY="5"
+                    markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" class="d-activa-r"/>
+            </marker>
+            <marker id="f-tenue" viewBox="0 0 10 10" refX="9" refY="5"
+                    markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" class="d-tenue"/>
+            </marker>
+          </defs>
+
+          <!-- ---- Panel izquierdo: gen activo ---- -->
+          <text x="160" y="26" text-anchor="middle" class="d-titulo">Gen activo</text>
+          <text x="257" y="66" text-anchor="middle" class="d-texto d-activa-r">se transcribe</text>
+          <line x1="205" y1="80" x2="306" y2="80" class="d-activa" marker-end="url(#f-activa)"/>
+
+          <rect x="38" y="136" width="156" height="28" rx="4" class="d-fondo"/>
+          <line x1="15" y1="144" x2="315" y2="144" class="d-linea"/>
+          <line x1="15" y1="156" x2="315" y2="156" class="d-linea"/>
+
+          <line x1="55"  y1="136" x2="55"  y2="116" class="d-linea"/>
+          <circle cx="55"  cy="110" r="6" class="d-caja"/>
+          <line x1="95"  y1="136" x2="95"  y2="116" class="d-linea"/>
+          <circle cx="95"  cy="110" r="6" class="d-caja"/>
+          <line x1="135" y1="136" x2="135" y2="116" class="d-linea"/>
+          <circle cx="135" cy="110" r="6" class="d-caja"/>
+          <line x1="175" y1="136" x2="175" y2="116" class="d-linea"/>
+          <circle cx="175" cy="110" r="6" class="d-caja"/>
+
+          <rect x="205" y="138" width="105" height="24" rx="4" class="d-caja"/>
+          <text x="257" y="155" text-anchor="middle" class="d-texto">GEN</text>
+          <text x="116" y="186" text-anchor="middle" class="d-tenue">isla CpG del promotor</text>
+
+          <!-- ---- Panel derecho: gen silenciado ---- -->
+          <g transform="translate(380,0)">
+            <text x="160" y="26" text-anchor="middle" class="d-titulo">Gen silenciado</text>
+            <text x="257" y="60" text-anchor="middle" class="d-texto d-represiva-r">no se transcribe</text>
+            <line x1="205" y1="80" x2="306" y2="80" class="d-linea" opacity="0.45"
+                  marker-end="url(#f-tenue)"/>
+            <line x1="245" y1="70" x2="265" y2="90" class="d-represiva"/>
+            <line x1="265" y1="70" x2="245" y2="90" class="d-represiva"/>
+
+            <rect x="55" y="76" width="130" height="28" rx="14" class="d-represiva"/>
+            <text x="120" y="95" text-anchor="middle" class="d-texto">MeCP2 + HDAC</text>
+
+            <rect x="38" y="136" width="156" height="28" rx="4" class="d-fondo"/>
+            <line x1="15" y1="144" x2="315" y2="144" class="d-linea"/>
+            <line x1="15" y1="156" x2="315" y2="156" class="d-linea"/>
+
+            <line x1="55"  y1="136" x2="55"  y2="116" class="d-linea"/>
+            <circle cx="55"  cy="110" r="6" class="d-caja d-acento-r"/>
+            <line x1="95"  y1="136" x2="95"  y2="116" class="d-linea"/>
+            <circle cx="95"  cy="110" r="6" class="d-caja d-acento-r"/>
+            <line x1="135" y1="136" x2="135" y2="116" class="d-linea"/>
+            <circle cx="135" cy="110" r="6" class="d-caja d-acento-r"/>
+            <line x1="175" y1="136" x2="175" y2="116" class="d-linea"/>
+            <circle cx="175" cy="110" r="6" class="d-caja d-acento-r"/>
+
+            <rect x="205" y="138" width="105" height="24" rx="4" class="d-caja"/>
+            <text x="257" y="155" text-anchor="middle" class="d-texto">GEN</text>
+            <text x="116" y="186" text-anchor="middle" class="d-tenue">isla CpG del promotor</text>
+          </g>
+
+          <!-- ---- Leyenda ---- -->
+          <circle cx="205" cy="256" r="6" class="d-caja"/>
+          <text x="220" y="260" class="d-tenue">CpG sin metilar</text>
+          <circle cx="360" cy="256" r="6" class="d-caja d-acento-r"/>
+          <text x="375" y="260" class="d-tenue">CpG metilado (5mC)</text>
+        </svg>
+        <figcaption>
+          <strong>Figura 1.</strong> La metilación de la isla CpG de un promotor no cambia la
+          secuencia del ADN, pero impide que se transcriba el gen: los grupos metilo bloquean la
+          unión de factores de transcripción y atraen proteínas lectoras como MeCP2, que a su vez
+          reclutan desacetilasas de histonas (HDAC) y compactan la cromatina.
+        </figcaption>
+      </figure>
+
+      <p class="pista">Pulsa cada apartado para desplegarlo.</p>
+
+      <details class="desplegable">
+      <summary>1. Metilación del ADN</summary>
       <p>
         Consiste en añadir un grupo metilo al carbono 5 de la citosina (<strong>5mC</strong>),
         casi siempre en dinucleótidos <strong>CpG</strong>. En el genoma humano están metilados en torno
@@ -131,7 +217,30 @@
           en el <em>cuerpo del gen</em> se asocia a transcripción activa.</li>
       </ul>
 
-      <h3>2. Modificaciones postraduccionales de histonas</h3>
+      <details class="desplegable ampliacion">
+        <summary>Ampliar: ¿cómo se copia la metilación en cada división celular?</summary>
+        <p>
+          Aquí está la clave de que una marca epigenética sea <em>heredable</em>. Cuando el ADN se
+          replica, la hebra antigua conserva sus grupos metilo y la hebra nueva se sintetiza sin
+          ellos. El CpG queda <strong>hemimetilado</strong>: metilado en un lado y no en el otro.
+        </p>
+        <p>
+          La proteína <strong>UHRF1</strong> reconoce de forma específica esos CpG hemimetilados y
+          recluta a <strong>DNMT1</strong>, que completa la metilación en la hebra nueva. El patrón
+          queda así restaurado en cada ciclo celular, igual que la secuencia de ADN se copia por
+          complementariedad de bases. Por eso se habla de <em>metilación de mantenimiento</em>.
+        </p>
+        <p>
+          Esto explica también cómo se pierde la marca: si DNMT1 no actúa durante varias
+          replicaciones, la metilación se diluye sola. Es la <em>desmetilación pasiva</em>, y es el
+          mecanismo por el que funcionan fármacos como la azacitidina, que se incorpora al ADN y
+          atrapa a DNMT1.
+        </p>
+      </details>
+      </details>
+
+      <details class="desplegable">
+      <summary>2. Modificaciones postraduccionales de histonas</summary>
       <p>
         Las colas N-terminales de las histonas pueden acetilarse, metilarse, fosforilarse o
         ubiquitinarse, entre otras modificaciones. La combinación de estas marcas (el llamado
@@ -190,15 +299,41 @@
         grupos metilo, que determinan qué proteínas lectoras se unen.
       </p>
 
-      <h3>3. Remodelado de la cromatina</h3>
+      <details class="desplegable ampliacion">
+        <summary>Ampliar: ¿por qué se habla de un «código» de histonas?</summary>
+        <p>
+          Porque lo que cuenta no es cada marca por separado, sino la <strong>combinación</strong>.
+          Un mismo residuo puede llevar uno, dos o tres grupos metilo, y cada estado atrae a
+          proteínas distintas. H3K4me3 y H3K4me1 están en la misma lisina y señalan cosas
+          diferentes: promotor activo la primera, potenciador la segunda.
+        </p>
+        <p>
+          Quienes «leen» ese código son dominios proteicos especializados: los
+          <strong>bromodominios</strong> reconocen lisinas acetiladas, y los
+          <strong>cromodominios</strong> y dominios PHD reconocen lisinas metiladas. Una vez
+          unidos, reclutan maquinaria que abre o cierra la cromatina. La marca, por sí sola, no
+          hace nada: lo hace la proteína que la interpreta.
+        </p>
+        <p>
+          Esto tiene una consecuencia terapéutica directa. Los <em>inhibidores de bromodominios</em>
+          (como los que bloquean BRD4) no borran ninguna marca: impiden que se lea. Varios están en
+          ensayo clínico en cánceres hematológicos.
+        </p>
+      </details>
+      </details>
+
+      <details class="desplegable">
+      <summary>3. Remodelado de la cromatina</summary>
       <p>
         Los complejos remodeladores dependientes de ATP (SWI/SNF, ISWI, CHD e INO80) deslizan,
         expulsan o reemplazan nucleosomas. También incorporan <strong>variantes de histonas</strong>
         como H2A.Z o H3.3. Las subunidades de SWI/SNF están mutadas en aproximadamente el 20 % de los
         cánceres humanos; por ejemplo, <em>ARID1A</em> en el carcinoma de ovario de células claras.
       </p>
+      </details>
 
-      <h3>4. ARN no codificantes</h3>
+      <details class="desplegable">
+      <summary>4. ARN no codificantes</summary>
       <p>
         Los <strong>ARN largos no codificantes</strong> (lncRNA) pueden guiar complejos
         modificadores de la cromatina a regiones concretas. El ejemplo clásico es
@@ -208,7 +343,30 @@
         epigenéticos en sentido amplio.
       </p>
 
-      <h3>Del mecanismo a la enfermedad</h3>
+      <details class="desplegable ampliacion">
+        <summary>Ampliar: cómo <em>XIST</em> silencia un cromosoma entero</summary>
+        <p>
+          Las células con dos cromosomas X necesitan igualar su dosis génica con las que solo
+          tienen uno. La solución es apagar uno de los dos por completo, y lo hace un ARN.
+        </p>
+        <p>
+          El gen <em>XIST</em> se expresa solo desde el cromosoma que va a ser silenciado. Su ARN,
+          de unas 17 kilobases, no se traduce: se queda en el núcleo y se extiende sobre el propio
+          cromosoma que lo produjo, recubriéndolo. Desde ahí recluta complejos represores, entre
+          ellos Polycomb, que depositan H3K27me3 por todo el cromosoma.
+        </p>
+        <p>
+          El resultado es el <strong>corpúsculo de Barr</strong>: un cromosoma compactado,
+          visible al microscopio, que permanece inactivo en todas las células hijas. La elección de
+          cuál de los dos X se apaga es aleatoria y ocurre pronto en el desarrollo, por eso las
+          mujeres son <em>mosaicos</em> para los genes del cromosoma X. El pelaje de las gatas
+          carey es el ejemplo visible de ese mosaicismo.
+        </p>
+      </details>
+      </details>
+
+      <details class="desplegable">
+      <summary>Del mecanismo a la enfermedad</summary>
       <ul>
         <li><strong>Cáncer:</strong> el patrón típico combina <em>hipometilación global</em>, que
           causa inestabilidad genómica, con <em>hipermetilación de islas CpG</em> en promotores de
@@ -225,6 +383,7 @@
           afectan a la misma región del cromosoma 15. Uno u otro aparece según se pierda el alelo
           paterno o el materno, que tienen patrones de metilación distintos.</li>
       </ul>
+      </details>
     </section>
 
     <!-- ===== PREGUNTA 2 ===== -->
@@ -238,7 +397,63 @@
         en la metilación puede reflejar solo un cambio en sus proporciones.
       </p>
 
-      <h3>El punto de partida: la conversión con bisulfito</h3>
+      <!-- DIAGRAMA 2: qué le hace el bisulfito a cada citosina -->
+      <figure>
+        <svg viewBox="0 0 700 215" role="img"
+             aria-label="La citosina sin metilar se convierte en uracilo con bisulfito y se lee como timina tras la PCR; la citosina metilada queda protegida y se sigue leyendo como citosina.">
+          <defs>
+            <marker id="f-paso" viewBox="0 0 10 10" refX="9" refY="5"
+                    markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" class="d-tenue"/>
+            </marker>
+          </defs>
+
+          <!-- Encabezados de columna -->
+          <text x="185" y="30" text-anchor="middle" class="d-titulo">ADN original</text>
+          <text x="365" y="30" text-anchor="middle" class="d-titulo">Tras el bisulfito</text>
+          <text x="545" y="30" text-anchor="middle" class="d-titulo">Tras PCR</text>
+
+          <!-- Fila 1: citosina sin metilar -->
+          <text x="140" y="89" text-anchor="end" class="d-tenue">citosina sin metilar</text>
+          <rect x="150" y="67" width="70" height="36" rx="5" class="d-caja"/>
+          <text x="185" y="90" text-anchor="middle" class="d-texto">C</text>
+          <line x1="228" y1="85" x2="322" y2="85" class="d-linea" marker-end="url(#f-paso)"/>
+          <text x="275" y="76" text-anchor="middle" class="d-tenue">desamina</text>
+          <rect x="330" y="67" width="70" height="36" rx="5" class="d-caja"/>
+          <text x="365" y="90" text-anchor="middle" class="d-texto">U</text>
+          <line x1="408" y1="85" x2="502" y2="85" class="d-linea" marker-end="url(#f-paso)"/>
+          <text x="455" y="76" text-anchor="middle" class="d-tenue">se copia</text>
+          <rect x="510" y="67" width="70" height="36" rx="5" class="d-caja"/>
+          <text x="545" y="90" text-anchor="middle" class="d-texto">T</text>
+          <text x="595" y="90" class="d-tenue">cambia</text>
+
+          <!-- Fila 2: citosina metilada -->
+          <text x="140" y="164" text-anchor="end" class="d-tenue">citosina metilada</text>
+          <rect x="150" y="142" width="70" height="36" rx="5" class="d-acento"/>
+          <text x="185" y="165" text-anchor="middle" class="d-texto d-acento-r">5mC</text>
+          <line x1="228" y1="160" x2="322" y2="160" class="d-linea" marker-end="url(#f-paso)"/>
+          <text x="275" y="151" text-anchor="middle" class="d-tenue">protegida</text>
+          <rect x="330" y="142" width="70" height="36" rx="5" class="d-acento"/>
+          <text x="365" y="165" text-anchor="middle" class="d-texto d-acento-r">5mC</text>
+          <line x1="408" y1="160" x2="502" y2="160" class="d-linea" marker-end="url(#f-paso)"/>
+          <text x="455" y="151" text-anchor="middle" class="d-tenue">se copia</text>
+          <rect x="510" y="142" width="70" height="36" rx="5" class="d-acento"/>
+          <text x="545" y="165" text-anchor="middle" class="d-texto d-acento-r">C</text>
+          <text x="595" y="165" class="d-tenue d-acento-r">se mantiene</text>
+        </svg>
+        <figcaption>
+          <strong>Figura 2.</strong> El fundamento de casi todas las técnicas de metilación. Tras
+          tratar el ADN con bisulfito y secuenciarlo, se compara con la secuencia de referencia:
+          cada citosina que aparece como <strong>T</strong> estaba sin metilar, y cada una que
+          sigue siendo <strong>C</strong> estaba metilada. El método no distingue 5mC de 5hmC,
+          porque ambas quedan protegidas.
+        </figcaption>
+      </figure>
+
+      <p class="pista">Pulsa cada apartado para desplegarlo.</p>
+
+      <details class="desplegable">
+      <summary>El punto de partida: la conversión con bisulfito</summary>
       <p>
         El bisulfito sódico desamina las citosinas <strong>no metiladas</strong> a uracilo, que se
         lee como timina tras la PCR. Las 5mC quedan protegidas y siguen leyéndose como C.
@@ -247,6 +462,31 @@
         5hmC (para eso existen variantes como oxBS-seq o TAB-seq). La conversión enzimática
         (EM-seq) es una alternativa que daña menos el ADN.
       </p>
+
+      <details class="desplegable ampliacion">
+        <summary>Ampliar: ¿qué es una región diferencialmente metilada (DMR)?</summary>
+        <p>
+          Una citosina aislada dice poco: la metilación varía entre células de la misma muestra y
+          la medida tiene ruido. Por eso casi nunca se analiza un CpG suelto, sino una
+          <strong>DMR</strong>: un tramo de varios CpG vecinos cuya metilación cambia de forma
+          coordinada entre dos grupos (por ejemplo, tumor frente a tejido sano).
+        </p>
+        <p>
+          Agrupar CpG vecinos tiene dos ventajas. Reduce el ruido, porque promedia varias medidas,
+          y rebaja el problema estadístico de las <em>comparaciones múltiples</em>: analizar
+          850.000 posiciones una a una produce miles de falsos positivos solo por azar, así que hay
+          que corregir el umbral de significación.
+        </p>
+        <p>
+          Las DMR que distinguen tipos celulares reciben el nombre de <em>tDMR</em> y son
+          precisamente las que usan los métodos de deconvolución y las biopsias líquidas para
+          averiguar de qué tejido procede el ADN.
+        </p>
+      </details>
+      </details>
+
+      <details class="desplegable">
+      <summary>Comparación de las principales técnicas</summary>
 
       <!-- Tabla comparativa de técnicas -->
       <div class="tabla-contenedor">
@@ -300,7 +540,10 @@
         </table>
       </div>
 
-      <h3>Estrategias para conseguir especificidad de tejido y de célula</h3>
+      </details>
+
+      <details class="desplegable">
+      <summary>Estrategias para conseguir especificidad de tejido y de célula</summary>
       <ul>
         <li><strong>Separar antes de medir:</strong> se aíslan poblaciones concretas por
           citometría (FACS), con bolas magnéticas (MACS) o por microdisección láser antes de
@@ -315,7 +558,10 @@
           para no confundir composición celular con cambio epigenético.</li>
       </ul>
 
-      <h3>Aplicaciones en enfermedades complejas</h3>
+      </details>
+
+      <details class="desplegable">
+      <summary>Aplicaciones en enfermedades complejas</summary>
       <ul>
         <li><strong>Estudios EWAS</strong> (<em>epigenome-wide association studies</em>):
           comparan la metilación entre casos y controles. Su principal reto es la
@@ -334,6 +580,31 @@
           la edad biológica (Horvath, 2013). Su aceleración se asocia a mayor riesgo de
           enfermedad cardiovascular, cáncer y mortalidad.</li>
       </ul>
+
+      <details class="desplegable ampliacion">
+        <summary>Ampliar: la trampa de los EWAS, con el tabaco como ejemplo</summary>
+        <p>
+          El hallazgo más sólido y reproducible de toda la epigenética poblacional es la
+          hipometilación del gen <em>AHRR</em> en la sangre de las personas fumadoras. Se replica
+          en cohortes de todo el mundo y la señal se recupera lentamente al dejar de fumar, lo que
+          la convierte en un buen biomarcador de exposición.
+        </p>
+        <p>
+          Pero sirve justamente para ver el problema de fondo. Fumar se asocia a cáncer de pulmón
+          y también cambia la metilación de <em>AHRR</em>. ¿Significa eso que ese cambio
+          <em>causa</em> el cáncer? No necesariamente: puede ser un simple marcador de haber
+          fumado, sin papel causal. Esto es lo que se llama <strong>confusión</strong>.
+        </p>
+        <p>
+          A eso se suma la <strong>causalidad inversa</strong>: en un enfermo, la metilación puede
+          haber cambiado <em>por</em> la enfermedad o por su tratamiento. Como en un EWAS se mide
+          todo a la vez, no se puede distinguir qué fue antes. Las dos salidas habituales son los
+          estudios <em>longitudinales</em>, que miden la metilación años antes del diagnóstico, y
+          la <strong>aleatorización mendeliana</strong>, que usa variantes genéticas (fijadas desde
+          la concepción, y por tanto anteriores a la enfermedad) como sustituto de la exposición.
+        </p>
+      </details>
+      </details>
     </section>
 
     <!-- ===== PREGUNTA 3 ===== -->
@@ -346,7 +617,69 @@
         hace posible y también la limita.
       </p>
 
-      <h3>El paisaje epigenético de Waddington</h3>
+      <!-- DIAGRAMA 3: diferenciación cuesta abajo y reprogramación cuesta arriba -->
+      <figure>
+        <svg viewBox="0 0 700 330" role="img"
+             aria-label="Árbol de diferenciación desde una célula pluripotente hasta cuatro tipos celulares. La diferenciación baja de forma espontánea, mientras que la reprogramación con los factores OSKM obliga a subir en contra de la barrera epigenética.">
+          <defs>
+            <marker id="f-baja" viewBox="0 0 10 10" refX="9" refY="5"
+                    markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" class="d-tenue"/>
+            </marker>
+            <marker id="f-sube" viewBox="0 0 10 10" refX="9" refY="5"
+                    markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" class="d-acento-r"/>
+            </marker>
+          </defs>
+
+          <!-- Célula pluripotente -->
+          <text x="350" y="20" text-anchor="middle" class="d-titulo">célula pluripotente</text>
+          <circle cx="350" cy="52" r="20" class="d-acento"/>
+
+          <!-- Ramas hacia los progenitores -->
+          <line x1="337" y1="69" x2="224" y2="142" class="d-linea" marker-end="url(#f-baja)"/>
+          <line x1="363" y1="69" x2="476" y2="142" class="d-linea" marker-end="url(#f-baja)"/>
+          <text x="350" y="112" text-anchor="middle" class="d-tenue">diferenciación</text>
+
+          <circle cx="210" cy="160" r="17" class="d-caja"/>
+          <circle cx="490" cy="160" r="17" class="d-caja"/>
+          <text x="210" y="194" text-anchor="middle" class="d-tenue">progenitor neural</text>
+          <text x="490" y="194" text-anchor="middle" class="d-tenue">progenitor mesodérmico</text>
+
+          <!-- Ramas hacia los tipos celulares finales -->
+          <line x1="198" y1="176" x2="112" y2="244" class="d-linea" marker-end="url(#f-baja)"/>
+          <line x1="222" y1="176" x2="250" y2="244" class="d-linea" marker-end="url(#f-baja)"/>
+          <line x1="478" y1="176" x2="450" y2="244" class="d-linea" marker-end="url(#f-baja)"/>
+          <line x1="502" y1="176" x2="588" y2="244" class="d-linea" marker-end="url(#f-baja)"/>
+
+          <circle cx="100" cy="262" r="15" class="d-caja"/>
+          <circle cx="260" cy="262" r="15" class="d-caja"/>
+          <circle cx="440" cy="262" r="15" class="d-caja"/>
+          <circle cx="600" cy="262" r="15" class="d-caja"/>
+          <text x="100" y="295" text-anchor="middle" class="d-tenue">neurona</text>
+          <text x="260" y="295" text-anchor="middle" class="d-tenue">glía</text>
+          <text x="440" y="295" text-anchor="middle" class="d-tenue">miocito</text>
+          <text x="600" y="295" text-anchor="middle" class="d-tenue">fibroblasto</text>
+
+          <!-- Reprogramación: vuelta cuesta arriba -->
+          <path d="M 616,252 C 674,208 678,98 374,44" class="d-acento"
+                stroke-dasharray="6 4" marker-end="url(#f-sube)"/>
+          <text x="548" y="140" text-anchor="middle" class="d-texto d-acento-r">reprogramación</text>
+          <text x="548" y="156" text-anchor="middle" class="d-tenue d-acento-r">OSKM · menos del 1 %</text>
+        </svg>
+        <figcaption>
+          <strong>Figura 3.</strong> En el paisaje de Waddington, bajar es lo natural: la célula se
+          diferencia y va acumulando marcas que cierran los genes de los demás linajes. Subir exige
+          forzar el sistema. Los cuatro factores de Yamanaka (OSKM) lo consiguen, pero con una
+          eficiencia muy baja, porque han de borrar esas marcas una a una. Esa misma barrera, cuando
+          se debilita, es la que permite la plasticidad de las células tumorales.
+        </figcaption>
+      </figure>
+
+      <p class="pista">Pulsa cada apartado para desplegarlo.</p>
+
+      <details class="desplegable">
+      <summary>El paisaje epigenético de Waddington</summary>
       <p>
         Waddington representó el desarrollo como una canica que rueda por una ladera con valles
         cada vez más profundos. Arriba está la célula pluripotente; cada valle es un destino
@@ -355,7 +688,10 @@
         volver atrás es cada vez más difícil.
       </p>
 
-      <h3>Mecanismos que permiten la plasticidad</h3>
+      </details>
+
+      <details class="desplegable">
+      <summary>Mecanismos que permiten la plasticidad</summary>
       <ul>
         <li><strong>Dominios bivalentes:</strong> en las células madre embrionarias, muchos
           promotores de genes del desarrollo tienen a la vez una marca activadora (H3K4me3) y
@@ -366,7 +702,30 @@
           fibroblasto aunque cambie su entorno.</li>
       </ul>
 
-      <h3>Reprogramación: borrar la memoria</h3>
+      <details class="desplegable ampliacion">
+        <summary>Ampliar: qué significa que un promotor sea «bivalente»</summary>
+        <p>
+          Es una de las ideas más elegantes de la epigenética del desarrollo. En una célula madre
+          embrionaria, muchos genes que dirigen el desarrollo no están ni encendidos ni apagados
+          del todo: llevan a la vez <strong>H3K4me3</strong>, la marca de promotor activo, y
+          <strong>H3K27me3</strong>, la marca represiva que deposita Polycomb.
+        </p>
+        <p>
+          El resultado es un gen silencioso pero <em>preparado</em>. La ARN polimerasa ya está
+          colocada en el promotor, detenida. Cuando llega la señal de diferenciación, basta con
+          retirar una de las dos marcas para decidir el destino: si se pierde H3K27me3, el gen
+          arranca de inmediato; si se pierde H3K4me3, queda silenciado de forma estable.
+        </p>
+        <p>
+          Esa es la base física de la plasticidad: la célula mantiene abiertas varias opciones a la
+          vez y resuelve tarde, en vez de comprometerse pronto. Al diferenciarse, la bivalencia
+          desaparece y el destino se fija.
+        </p>
+      </details>
+      </details>
+
+      <details class="desplegable">
+      <summary>Reprogramación: borrar la memoria</summary>
       <p>
         En 2006, Takahashi y Yamanaka demostraron que bastan cuatro factores de transcripción
         (Oct4, Sox2, Klf4 y c-Myc, los factores OSKM) para convertir fibroblastos en
@@ -382,7 +741,10 @@
         línea de investigación sobre el envejecimiento como proceso en parte epigenético.
       </p>
 
-      <h3>La plasticidad en la enfermedad</h3>
+      </details>
+
+      <details class="desplegable">
+      <summary>La plasticidad en la enfermedad</summary>
       <ul>
         <li><strong>Cáncer:</strong> la reprogramación epigenética no mutacional y la
           plasticidad fenotípica se reconocen hoy como rasgos distintivos del cáncer
@@ -399,6 +761,7 @@
           de la inmunidad innata, beneficiosa frente a infecciones pero implicada en
           enfermedades inflamatorias crónicas.</li>
       </ul>
+      </details>
     </section>
 
     <!-- ===== PREGUNTA 4 ===== -->
@@ -411,7 +774,70 @@
         todo el genoma a herramientas que modifiquen un único locus.
       </p>
 
-      <h3>Primera generación: fármacos epigenéticos (efecto global)</h3>
+      <!-- DIAGRAMA 4: arquitectura modular de la edición epigenética -->
+      <figure>
+        <svg viewBox="0 0 700 290" role="img"
+             aria-label="Una dCas9 guiada por ARN se posa en un locus concreto del genoma y lleva acoplado un efector intercambiable: TET1 desmetila y activa el gen, DNMT3A metila y lo silencia. El resto del genoma queda sin cambios y el ADN no se corta.">
+          <defs>
+            <marker id="f-guia" viewBox="0 0 10 10" refX="9" refY="5"
+                    markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" class="d-tenue"/>
+            </marker>
+          </defs>
+
+          <!-- Módulo efector, intercambiable -->
+          <rect x="295" y="50" width="130" height="44" rx="8" class="d-acento"/>
+          <text x="360" y="71" text-anchor="middle" class="d-texto d-acento-r">efector</text>
+          <text x="360" y="87" text-anchor="middle" class="d-tenue">intercambiable</text>
+
+          <text x="285" y="64" text-anchor="end" class="d-texto d-activa-r">TET1 → desmetila</text>
+          <text x="285" y="80" text-anchor="end" class="d-tenue d-activa-r">el gen se activa</text>
+          <text x="435" y="64" class="d-texto d-represiva-r">DNMT3A → metila</text>
+          <text x="435" y="80" class="d-tenue d-represiva-r">el gen se silencia</text>
+
+          <!-- Módulo de unión al ADN -->
+          <line x1="360" y1="94" x2="360" y2="106" class="d-linea"/>
+          <rect x="295" y="106" width="130" height="50" rx="8" class="d-caja"/>
+          <text x="360" y="128" text-anchor="middle" class="d-texto">dCas9</text>
+          <text x="360" y="145" text-anchor="middle" class="d-tenue">no corta el ADN</text>
+
+          <!-- ARN guía que lo lleva al sitio exacto -->
+          <line x1="360" y1="156" x2="360" y2="188" class="d-linea" marker-end="url(#f-guia)"/>
+          <text x="372" y="176" class="d-tenue">ARN guía</text>
+
+          <!-- Genoma -->
+          <rect x="300" y="192" width="120" height="24" rx="3" class="d-fondo"/>
+          <line x1="30" y1="198" x2="670" y2="198" class="d-linea"/>
+          <line x1="30" y1="210" x2="670" y2="210" class="d-linea"/>
+
+          <rect x="90"  y="193" width="100" height="22" rx="4" class="d-caja"/>
+          <text x="140" y="209" text-anchor="middle" class="d-tenue">otro gen</text>
+          <rect x="520" y="193" width="100" height="22" rx="4" class="d-caja"/>
+          <text x="570" y="209" text-anchor="middle" class="d-tenue">otro gen</text>
+          <text x="140" y="240" text-anchor="middle" class="d-tenue">sin cambios</text>
+          <text x="570" y="240" text-anchor="middle" class="d-tenue">sin cambios</text>
+
+          <line x1="325" y1="216" x2="325" y2="232" class="d-linea"/>
+          <circle cx="325" cy="238" r="5" class="d-caja d-acento-r"/>
+          <line x1="360" y1="216" x2="360" y2="232" class="d-linea"/>
+          <circle cx="360" cy="238" r="5" class="d-caja d-acento-r"/>
+          <line x1="395" y1="216" x2="395" y2="232" class="d-linea"/>
+          <circle cx="395" cy="238" r="5" class="d-caja d-acento-r"/>
+          <text x="360" y="266" text-anchor="middle" class="d-tenue">locus diana</text>
+        </svg>
+        <figcaption>
+          <strong>Figura 4.</strong> La edición epigenética separa dos funciones en dos módulos.
+          Uno <em>localiza</em>: la dCas9, dirigida por un ARN guía que se puede reprogramar
+          cambiando solo veinte nucleótidos. Otro <em>escribe o borra</em> la marca: basta
+          intercambiar el efector para pasar de activar un gen a silenciarlo. A diferencia de
+          CRISPR convencional, la dCas9 no corta el ADN ni cambia la secuencia.
+        </figcaption>
+      </figure>
+
+      <p class="pista">Pulsa cada apartado para desplegarlo.</p>
+
+      <details class="desplegable">
+      <summary>Primera generación: fármacos epigenéticos (efecto global)</summary>
       <div class="tabla-contenedor">
         <table>
           <thead>
@@ -451,7 +877,10 @@
         importante. Su uso se concentra en cánceres hematológicos.
       </p>
 
-      <h3>Segunda generación: edición epigenética dirigida</h3>
+      </details>
+
+      <details class="desplegable">
+      <summary>Segunda generación: edición epigenética dirigida</summary>
       <p>
         La idea es unir dos módulos: un <strong>dominio de unión al ADN programable</strong>, que
         lleva la herramienta al locus elegido, y un <strong>dominio efector</strong>, que escribe
@@ -509,7 +938,10 @@
         </p>
       </aside>
 
-      <h3>Ventajas y retos</h3>
+      </details>
+
+      <details class="desplegable">
+      <summary>Ventajas y retos</summary>
       <ul>
         <li><strong>Ventajas:</strong> no se generan roturas de doble cadena ni se altera la
           secuencia, el efecto es en principio reversible y se pueden modificar varios loci a
@@ -527,6 +959,32 @@
           marca es causa y cuál es consecuencia. La edición epigenética es, además de una posible
           terapia, la herramienta experimental para responder a esa pregunta.</li>
       </ul>
+
+      <details class="desplegable ampliacion">
+        <summary>Ampliar: ¿en qué se diferencia de la terapia génica con CRISPR?</summary>
+        <p>
+          Son dos estrategias distintas que comparten el mismo sistema de direccionamiento.
+        </p>
+        <p>
+          <strong>CRISPR convencional</strong> usa una Cas9 activa que <em>corta</em> las dos
+          hebras del ADN. La célula repara ese corte, y al repararlo se corrige o se inutiliza el
+          gen. El cambio es permanente porque cambia la secuencia, pero la reparación no siempre
+          sale como se pretende y las roturas de doble cadena pueden generar reordenamientos.
+        </p>
+        <p>
+          <strong>La edición epigenética</strong> usa una Cas9 inactivada (dCas9) que solo se posa
+          sobre el ADN. No corta nada: deja o retira una marca química. La secuencia queda intacta,
+          así que en principio el cambio es reversible y no hay riesgo de romper el genoma. A
+          cambio, la permanencia no está garantizada: depende de si la célula copia esa marca en
+          sus divisiones.
+        </p>
+        <p>
+          La elección depende del problema. Para una mutación puntual que hay que corregir, hace
+          falta cambiar la secuencia. Para un gen que está bien pero se expresa de más o de menos,
+          como ocurre en muchas enfermedades complejas, basta con regularlo.
+        </p>
+      </details>
+      </details>
     </section>
 
     <!-- ===== IDEAS CLAVE ===== -->

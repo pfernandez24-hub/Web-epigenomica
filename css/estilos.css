@@ -241,7 +241,139 @@ tbody tr:last-child td { border-bottom: none; }
 .represiva { color: var(--represiva); }
 
 /* =========================================================
-   7. PIE DE PÁGINA
+   7. DESPLEGABLES (etiqueta <details> de HTML)
+   No necesitan JavaScript: el navegador los abre y cierra solo.
+   ========================================================= */
+/* Aviso breve antes de un grupo de desplegables */
+.pista {
+  font-size: 0.88rem;
+  color: var(--texto-suave);
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.desplegable {
+  margin: 1rem 0;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+}
+
+/* El título sobre el que se hace clic */
+.desplegable > summary {
+  cursor: pointer;
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--fuente-titulos);
+  font-size: 1.15rem;
+  line-height: 1.3;
+  list-style: none;          /* oculta el triángulo por defecto */
+}
+.desplegable > summary::-webkit-details-marker { display: none; }
+
+/* Flecha propia: cuadrado con dos bordes, girado 45° */
+.desplegable > summary::before {
+  content: "";
+  flex: none;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 2px solid var(--acento);
+  border-bottom: 2px solid var(--acento);
+  transform: rotate(-45deg);   /* apunta a la derecha: cerrado */
+  transition: transform 0.2s ease;
+}
+.desplegable[open] > summary::before {
+  transform: rotate(45deg);    /* apunta abajo: abierto */
+}
+
+.desplegable > summary:hover { color: var(--acento); }
+
+/* Marco visible al navegar con el teclado (accesibilidad) */
+.desplegable > summary:focus-visible {
+  outline: 2px solid var(--acento);
+  outline-offset: -2px;
+  border-radius: 8px;
+}
+
+/* Margen del contenido que se despliega */
+.desplegable > :not(summary) {
+  margin-left: 1.1rem;
+  margin-right: 1.1rem;
+}
+.desplegable > :last-child { margin-bottom: 1.1rem; }
+
+/* Variante "ampliación": contenido extra, opcional, de más profundidad */
+.ampliacion {
+  background: transparent;
+  border: none;
+  border-left: 3px solid var(--acento);
+  border-radius: 0;
+}
+.ampliacion > summary {
+  font-family: var(--fuente-texto);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--acento);
+  padding: 0.6rem 1rem;
+}
+.ampliacion > :not(summary) { font-size: 0.95rem; }
+
+/* Al imprimir, se despliega todo para que no falte contenido en el papel */
+@media print {
+  .desplegable > *:not(summary) { display: block !important; }
+  .desplegable > summary::before { display: none; }
+}
+
+/* =========================================================
+   8. DIAGRAMAS (SVG dibujados a mano)
+   Los colores salen de las variables, así que funcionan
+   igual en modo claro y en modo oscuro.
+   ========================================================= */
+figure {
+  margin: 2rem 0;
+}
+
+figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* En pantallas estrechas el diagrama no se encoge hasta ser ilegible:
+   mantiene un ancho mínimo y se desliza en horizontal, como las tablas. */
+@media (max-width: 640px) {
+  figure {
+    overflow-x: auto;
+    padding-bottom: 0.3rem;
+  }
+  figure svg { min-width: 560px; }
+}
+
+figcaption {
+  margin-top: 0.7rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--texto-suave);
+}
+
+/* Clases que usan los diagramas */
+.d-linea   { stroke: currentColor; fill: none; stroke-width: 1.5; }
+.d-caja    { stroke: currentColor; fill: none; stroke-width: 1.5; }
+.d-texto   { fill: currentColor; font-family: var(--fuente-texto); font-size: 12px; }
+.d-titulo  { fill: currentColor; font-family: var(--fuente-texto); font-size: 13px; font-weight: 600; }
+.d-tenue   { fill: var(--texto-suave); font-family: var(--fuente-texto); font-size: 11px; }
+.d-activa    { stroke: var(--activa); fill: none; stroke-width: 1.5; }
+.d-activa-r  { fill: var(--activa); }
+.d-represiva   { stroke: var(--represiva); fill: none; stroke-width: 1.5; }
+.d-represiva-r { fill: var(--represiva); }
+.d-acento    { stroke: var(--acento); fill: none; stroke-width: 1.5; }
+.d-acento-r  { fill: var(--acento); }
+.d-fondo     { fill: var(--acento-claro); stroke: none; }
+
+/* =========================================================
+   9. PIE DE PÁGINA
    ========================================================= */
 .pie {
   text-align: center;
