@@ -244,86 +244,70 @@ tbody tr:last-child td { border-bottom: none; }
    7. DESPLEGABLES (etiqueta <details> de HTML)
    No necesitan JavaScript: el navegador los abre y cierra solo.
    ========================================================= */
-/* Aviso breve antes de un grupo de desplegables */
+/* Aviso breve, por ejemplo al final de la introducción */
 .pista {
   font-size: 0.88rem;
   color: var(--texto-suave);
   font-style: italic;
-  margin-bottom: 0.5rem;
 }
 
-.desplegable {
-  margin: 1rem 0;
-  background: var(--superficie);
-  border: 1px solid var(--borde);
-  border-radius: 8px;
-}
-
-/* El título sobre el que se hace clic */
+/* Cada apartado numerado (01, 02, 03, 04) es un desplegable completo.
+   El título es el que se pulsa para abrirlo y cerrarlo. */
 .desplegable > summary {
   cursor: pointer;
-  padding: 0.9rem 1.1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  font-family: var(--fuente-titulos);
-  font-size: 1.15rem;
-  line-height: 1.3;
-  list-style: none;          /* oculta el triángulo por defecto */
+  list-style: none;          /* oculta el triángulo que pone el navegador */
+  padding: 0.2rem 0;
 }
 .desplegable > summary::-webkit-details-marker { display: none; }
 
-/* Flecha propia: cuadrado con dos bordes, girado 45° */
-.desplegable > summary::before {
+/* El título lleva la flecha delante, alineada con la primera línea */
+.desplegable > summary h2 {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+/* Flecha propia: un cuadrado con dos bordes, girado 45° */
+.desplegable > summary h2::before {
   content: "";
   flex: none;
-  width: 0.45rem;
-  height: 0.45rem;
-  border-right: 2px solid var(--acento);
-  border-bottom: 2px solid var(--acento);
+  width: 0.6rem;
+  height: 0.6rem;
+  margin-top: 0.42em;          /* la centra con la primera línea del título */
+  border-right: 3px solid var(--acento);
+  border-bottom: 3px solid var(--acento);
   transform: rotate(-45deg);   /* apunta a la derecha: cerrado */
   transition: transform 0.2s ease;
 }
-.desplegable[open] > summary::before {
+.desplegable[open] > summary h2::before {
   transform: rotate(45deg);    /* apunta abajo: abierto */
 }
 
-.desplegable > summary:hover { color: var(--acento); }
+.desplegable > summary:hover h2 { color: var(--acento); }
 
 /* Marco visible al navegar con el teclado (accesibilidad) */
 .desplegable > summary:focus-visible {
   outline: 2px solid var(--acento);
-  outline-offset: -2px;
-  border-radius: 8px;
+  outline-offset: 4px;
+  border-radius: 6px;
 }
 
-/* Margen del contenido que se despliega */
-.desplegable > :not(summary) {
-  margin-left: 1.1rem;
-  margin-right: 1.1rem;
-}
-.desplegable > :last-child { margin-bottom: 1.1rem; }
+/* Separación entre el título y el contenido que se despliega */
+.desplegable > summary + * { margin-top: 1.5rem; }
 
-/* Variante "ampliación": contenido extra, opcional, de más profundidad */
-.ampliacion {
-  background: transparent;
-  border: none;
-  border-left: 3px solid var(--acento);
-  border-radius: 0;
+/* Con el apartado cerrado se reduce el espacio sobrante, para que los
+   cuatro títulos se lean juntos como un índice. Si el navegador fuese
+   antiguo y no entendiese :has(), simplemente quedaría más separado. */
+.seccion:has(> .desplegable:not([open])) {
+  padding-top: 2.2rem;
+  padding-bottom: 2.2rem;
 }
-.ampliacion > summary {
-  font-family: var(--fuente-texto);
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--acento);
-  padding: 0.6rem 1rem;
-}
-.ampliacion > :not(summary) { font-size: 0.95rem; }
 
 /* Al imprimir, se despliega todo para que no falte contenido en el papel */
 @media print {
   .desplegable > *:not(summary) { display: block !important; }
-  .desplegable > summary::before { display: none; }
+  .desplegable > summary h2::before { display: none; }
 }
 
 /* =========================================================
@@ -361,6 +345,9 @@ figcaption {
 /* Clases que usan los diagramas */
 .d-linea   { stroke: currentColor; fill: none; stroke-width: 1.5; }
 .d-caja    { stroke: currentColor; fill: none; stroke-width: 1.5; }
+/* Caja opaca: tapa lo que haya debajo, para que las líneas del ADN
+   no crucen por encima del texto que va dentro. */
+.d-caja-solida { stroke: currentColor; fill: var(--fondo); stroke-width: 1.5; }
 .d-texto   { fill: currentColor; font-family: var(--fuente-texto); font-size: 12px; }
 .d-titulo  { fill: currentColor; font-family: var(--fuente-texto); font-size: 13px; font-weight: 600; }
 .d-tenue   { fill: var(--texto-suave); font-family: var(--fuente-texto); font-size: 11px; }
