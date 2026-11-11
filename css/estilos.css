@@ -13,8 +13,10 @@
   --activa: #15803d;        /* verde: activación génica */
   --represiva: #b91c1c;     /* rojo: represión génica */
 
-  --fuente-titulos: "Fraunces", Georgia, serif;
-  --fuente-texto: "Inter", system-ui, sans-serif;
+  /* Tipografía clásica, la misma que Word usa por defecto en los trabajos.
+     Si un ordenador no tuviera Times New Roman, usa la siguiente de la lista. */
+  --fuente-titulos: "Times New Roman", Times, "Liberation Serif", serif;
+  --fuente-texto: "Times New Roman", Times, "Liberation Serif", serif;
 
   --ancho-max: 760px;       /* ancho cómodo para leer */
 }
@@ -46,8 +48,10 @@ body {
   background: var(--fondo);
   color: var(--texto);
   font-family: var(--fuente-texto);
-  font-size: 1.0625rem;
-  line-height: 1.7;
+  /* Times New Roman se ve más pequeña que una tipografía de palo seco
+     al mismo tamaño, así que se sube un poco para que se lea igual de bien. */
+  font-size: 1.2rem;
+  line-height: 1.65;
 }
 
 h1, h2, h3 {
@@ -273,6 +277,23 @@ th {
 
 tbody tr:last-child td { border-bottom: none; }
 
+/* Tabla del glosario: la abreviatura en la primera columna */
+.glosario th {
+  width: 9.5rem;
+  white-space: nowrap;
+  background: transparent;
+  color: var(--acento);
+  font-family: var(--fuente-texto);
+  vertical-align: top;
+}
+.glosario td { vertical-align: top; }
+
+/* En el móvil la columna de la abreviatura se estrecha para dejar
+   más sitio a la definición. */
+@media (max-width: 640px) {
+  .glosario th { width: 6rem; }
+}
+
 /* Colores para marcar efecto activador o represor */
 .activa    { color: var(--activa); }
 .represiva { color: var(--represiva); }
@@ -281,6 +302,34 @@ tbody tr:last-child td { border-bottom: none; }
    7. DESPLEGABLES (etiqueta <details> de HTML)
    No necesitan JavaScript: el navegador los abre y cierra solo.
    ========================================================= */
+/* =========================================================
+   CAJA "LO ESENCIAL"
+   El resumen de cada apartado, pensado para estudiar.
+   ========================================================= */
+.esencial {
+  margin: 0 0 2rem;
+  padding: 1.1rem 1.4rem;
+  background: var(--acento-claro);
+  border-radius: 8px;
+}
+.esencial-titulo {
+  margin: 0 0 0.6rem;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--acento);
+}
+.esencial ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+.esencial li {
+  margin-bottom: 0.45rem;
+  line-height: 1.5;
+}
+.esencial li:last-child { margin-bottom: 0; }
+
 /* Aviso breve, por ejemplo al final de la introducción */
 .pista {
   font-size: 0.88rem;
